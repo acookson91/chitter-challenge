@@ -21,6 +21,7 @@ class Chitter < Sinatra::Base
   set :session_secret, 'super secret'
 
   get '/chits' do
+    @user = current_user
     @chits = Chit.all
     erb :'chits/index'
   end

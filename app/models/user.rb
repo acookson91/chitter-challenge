@@ -13,6 +13,9 @@ class User
   validates_confirmation_of :password
   validates_format_of :email, as: :email_address
 
+  # has n, :tags, through: Resource
+  has n, :chits
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

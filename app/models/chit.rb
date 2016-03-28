@@ -8,7 +8,22 @@ class Chit
   property :id,     Serial
   property :post,  String
   property :time,    String
+  property :username,   String
 
-  has n, :tags, through: Resource
+  # has n, :tags, through: Resource
+  belongs_to :users
 
 end
+
+
+# include DataMapper::Resource
+#
+# property :id,     Serial
+# property :post,  String
+# property :time,    String
+# property :username,   String
+#
+# has n, :tags, through: Resource
+# belongs_to :user
+#
+# end
